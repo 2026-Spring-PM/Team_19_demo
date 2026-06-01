@@ -7,10 +7,12 @@ RUN apt-get update && apt-get install -y \
     cmake \
     build-essential \
     libsfml-dev \
-    libgl1-mesa-glx \
+    libgl1 \
+    libglx0 \
     libgl1-mesa-dri \
     && rm -rf /var/lib/apt/lists/*
-
+    
 WORKDIR /workspace
 
 USER ubuntu
+
