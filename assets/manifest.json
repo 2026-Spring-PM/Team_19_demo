@@ -1,0 +1,496 @@
+{
+  "meta": {
+    "name": "farm_game_assets",
+    "version": "0.1",
+    "authoring_spec": "docs/32_PIXEL_ASSET_LIST_V0_1.md",
+    "tile_size": [32, 32],
+    "character_size": [32, 48],
+    "dog_size": [32, 32],
+    "icon_sizes": [16, 16, 24, 24],
+    "map_grid": [13, 13],
+    "coordinate_system": "topdown",
+    "palette_theme": "spring_forest",
+    "coldwave_overlay": true,
+    "z_order": [
+      "ground",
+      "objects",
+      "characters",
+      "ui"
+    ]
+  },
+
+  "tiles": {
+    "grass": {
+      "file": "assets/tiles/tile_grass.png",
+      "collision": false,
+      "priority": "P0"
+    },
+
+    "empty_land": {
+      "file": "assets/tiles/tile_empty_land.png",
+      "collision": false,
+      "priority": "P0"
+    },
+
+    "field": {
+      "file": "assets/tiles/tile_field.png",
+      "collision": false,
+      "priority": "P0"
+    },
+
+    "field_wet": {
+      "file": "assets/tiles/tile_field_wet.png",
+      "collision": false,
+      "priority": "P2"
+    },
+
+    "dense_forest_boundary": {
+      "file": "assets/tiles/tile_boundary_dense.png",
+      "collision": true,
+      "priority": "P0"
+    },
+
+    "boundary_tree_small": {
+      "file": "assets/tiles/tile_boundary_tree_s.png",
+      "collision": true,
+      "priority": "P1"
+    },
+
+    "boundary_tree_big": {
+      "file": "assets/tiles/tile_boundary_tree_l.png",
+      "collision": true,
+      "priority": "P1"
+    }
+  },
+
+  "objects": {
+    "small_tree": {
+      "file": "assets/objects/trees/obj_small_tree.png",
+      "collision": true,
+      "priority": "P0"
+    },
+
+    "big_tree": {
+      "file": "assets/objects/trees/obj_big_tree.png",
+      "collision": true,
+      "priority": "P0"
+    },
+
+    "bush": {
+      "file": "assets/objects/nature/obj_bush.png",
+      "collision": true,
+      "priority": "P0"
+    },
+
+    "branch_pickup": {
+      "file": "assets/objects/nature/obj_branch_bundle.png",
+      "pickup": true,
+      "collision": false,
+      "priority": "P0"
+    },
+
+    "tent": {
+      "file": "assets/objects/camp/obj_tent.png",
+      "collision": true,
+      "priority": "P0"
+    },
+
+    "campfire_spot": {
+      "file": "assets/objects/camp/obj_campfire_off.png",
+      "animated": false,
+      "priority": "P0"
+    },
+
+    "campfire_lit": {
+      "file": "assets/objects/camp/obj_campfire_on.png",
+      "animated": true,
+      "effect": "campfire_fire",
+      "priority": "P0"
+    },
+
+    "workshop": {
+      "file": "assets/objects/buildings/obj_workshop.png",
+      "collision": true,
+      "priority": "P2"
+    },
+
+    "warehouse": {
+      "file": "assets/objects/buildings/obj_warehouse.png",
+      "collision": true,
+      "priority": "P2"
+    },
+
+    "greenhouse_base": {
+      "file": "assets/objects/buildings/obj_greenhouse_base.png",
+      "collision": true,
+      "priority": "P2"
+    },
+
+    "dog_house": {
+      "file": "assets/objects/buildings/obj_dog_house.png",
+      "collision": true,
+      "priority": "P3"
+    }
+  },
+
+  "starting_layout": {
+    "small_tree": 8,
+    "big_tree": 3,
+    "bush": 4,
+    "branch_pickup": 3,
+    "tent": 1,
+    "campfire_spot": 1
+  },
+
+  "player": {
+    "idle": {
+      "directions": {
+        "n": {
+          "path": "assets/player/idle/",
+          "pattern": "player_idle_n_%02d.png",
+          "frame_count": 2,
+          "loop": true,
+          "fps": 2
+        },
+
+        "s": {
+          "path": "assets/player/idle/",
+          "pattern": "player_idle_s_%02d.png",
+          "frame_count": 2,
+          "loop": true,
+          "fps": 2
+        },
+
+        "e": {
+          "path": "assets/player/idle/",
+          "pattern": "player_idle_e_%02d.png",
+          "frame_count": 2,
+          "loop": true,
+          "fps": 2
+        },
+
+        "w": {
+          "path": "assets/player/idle/",
+          "pattern": "player_idle_w_%02d.png",
+          "frame_count": 2,
+          "loop": true,
+          "fps": 2
+        }
+      },
+
+      "priority": "P0"
+    },
+
+    "walk": {
+      "directions": {
+        "n": {
+          "path": "assets/player/walk/",
+          "pattern": "player_walk_n_%02d.png",
+          "frame_count": 4,
+          "loop": true,
+          "fps": 8
+        },
+
+        "s": {
+          "path": "assets/player/walk/",
+          "pattern": "player_walk_s_%02d.png",
+          "frame_count": 4,
+          "loop": true,
+          "fps": 8
+        },
+
+        "e": {
+          "path": "assets/player/walk/",
+          "pattern": "player_walk_e_%02d.png",
+          "frame_count": 4,
+          "loop": true,
+          "fps": 8
+        },
+
+        "w": {
+          "path": "assets/player/walk/",
+          "pattern": "player_walk_w_%02d.png",
+          "frame_count": 4,
+          "loop": true,
+          "fps": 8
+        }
+      },
+
+      "priority": "P0"
+    },
+
+    "chop": {
+      "path": "assets/player/chop/",
+      "pattern": "player_chop_%02d.png",
+      "frame_count": 3,
+      "loop": false,
+      "fps": 10,
+      "priority": "P2"
+    },
+
+    "farm": {
+      "water": {
+        "path": "assets/player/farm/",
+        "pattern": "player_farm_water_%02d.png",
+        "frame_count": 2,
+        "loop": false,
+        "priority": "P2"
+      },
+
+      "harvest": {
+        "path": "assets/player/farm/",
+        "pattern": "player_farm_harvest_%02d.png",
+        "frame_count": 2,
+        "loop": false,
+        "priority": "P2"
+      }
+    },
+
+    "sleep": {
+      "file": "assets/player/player_sleep.png",
+      "priority": "P3"
+    }
+  },
+
+  "dog": {
+    "idle": {
+      "path": "assets/dog/idle/",
+      "pattern": "dog_idle_%02d.png",
+      "frame_count": 4,
+      "loop": true,
+      "priority": "P0"
+    },
+
+    "walk": {
+      "path": "assets/dog/walk/",
+      "pattern": "dog_walk_%02d.png",
+      "frame_count": 4,
+      "loop": true,
+      "priority": "P2"
+    },
+
+    "happy": {
+      "path": "assets/dog/happy/",
+      "pattern": "dog_happy_%02d.png",
+      "frame_count": 2,
+      "loop": false,
+      "priority": "P2"
+    },
+
+    "tired": {
+      "file": "assets/dog/dog_tired.png",
+      "priority": "P2"
+    }
+  },
+
+  "merchant": {
+    "idle": {
+      "file": "assets/merchant/merchant_idle.png",
+      "priority": "P1"
+    },
+
+    "portrait": {
+      "file": "assets/merchant/merchant_portrait.png",
+      "priority": "P2"
+    }
+  },
+
+  "crops": {
+    "potato": {
+      "stages": {
+        "1": "assets/crops/potato/crop_potato_stage1.png",
+        "2": "assets/crops/potato/crop_potato_stage2.png",
+        "3": "assets/crops/potato/crop_potato_stage3.png",
+        "4": "assets/crops/potato/crop_potato_stage4.png",
+        "wilt": "assets/crops/potato/crop_potato_wilt.png"
+      },
+
+      "priority": "P0"
+    },
+
+    "sprouted_potato": {
+      "prefix": "crop_sprout_potato_",
+      "priority": "P0"
+    },
+
+    "turnip": {
+      "prefix": "crop_turnip_",
+      "priority": "P1"
+    },
+
+    "cold_turnip": {
+      "prefix": "crop_cold_turnip_",
+      "cold_resistant": true,
+      "priority": "P1"
+    },
+
+    "herb": {
+      "prefix": "crop_herb_",
+      "priority": "P1"
+    },
+
+    "mushroom": {
+      "prefix": "crop_mushroom_",
+      "priority": "P1"
+    }
+  },
+
+  "icons": {
+    "resources": {
+      "wood": "assets/icons/resources/icon_wood.png",
+      "branch": "assets/icons/resources/icon_branch.png",
+      "stone": "assets/icons/resources/icon_stone.png",
+      "water": "assets/icons/resources/icon_water.png",
+      "vine": "assets/icons/resources/icon_vine.png",
+      "clay": "assets/icons/resources/icon_clay.png",
+      "cloth": "assets/icons/resources/icon_cloth.png",
+      "leather": "assets/icons/resources/icon_leather.png",
+      "metal_scrap": "assets/icons/resources/icon_metal_scrap.png",
+      "transparent_resin": "assets/icons/resources/icon_resin.png"
+    },
+
+    "food": {
+      "potato": "assets/icons/food/icon_potato.png",
+      "sprouted_potato": "assets/icons/food/icon_sprouted_potato.png",
+      "dried_food": "assets/icons/food/icon_dried_food.png",
+      "berry": "assets/icons/food/icon_berry.png",
+      "mushroom": "assets/icons/food/icon_mushroom.png",
+      "turnip": "assets/icons/food/icon_turnip.png",
+      "cold_turnip": "assets/icons/food/icon_cold_turnip.png",
+      "fish": "assets/icons/food/icon_fish.png",
+      "baked_potato": "assets/icons/food/icon_baked_potato.png",
+      "mushroom_soup": "assets/icons/food/icon_mushroom_soup.png",
+      "herb_tea": "assets/icons/food/icon_herb_tea.png",
+      "herb": "assets/icons/food/icon_herb.png"
+    },
+
+    "seeds": {
+      "potato_seed": "assets/icons/seeds/icon_seed_potato.png",
+      "turnip_seed": "assets/icons/seeds/icon_seed_turnip.png",
+      "cold_turnip_seed": "assets/icons/seeds/icon_seed_cold_turnip.png"
+    },
+
+    "tools": {
+      "old_knife": "assets/icons/tools/icon_knife_old.png",
+      "water_bucket": "assets/icons/tools/icon_bucket.png",
+      "temp_axe": "assets/icons/tools/icon_axe_temp.png",
+      "sturdy_axe": "assets/icons/tools/icon_axe_sturdy.png",
+      "shovel": "assets/icons/tools/icon_shovel.png",
+      "winter_clothes": "assets/icons/tools/icon_winter_clothes.png",
+      "tent": "assets/icons/tools/icon_tent.png"
+    }
+  },
+
+  "ui": {
+    "buttons": {
+      "inventory": "assets/ui/buttons/ui_btn_inventory.png",
+      "craft": "assets/ui/buttons/ui_btn_craft.png",
+      "explore": "assets/ui/buttons/ui_btn_explore.png",
+      "merchant": "assets/ui/buttons/ui_btn_merchant.png",
+      "sleep": "assets/ui/buttons/ui_btn_sleep.png",
+      "dog": "assets/ui/buttons/ui_btn_dog.png",
+      "close": "assets/ui/buttons/ui_btn_close.png"
+    },
+
+    "progress": {
+      "background": "assets/ui/progress/ui_progress_bg.png",
+      "fill": "assets/ui/progress/ui_progress_fill.png"
+    },
+
+    "panels": {
+      "modal_frame_9slice": "assets/ui/panels/ui_panel_9slice.png"
+    },
+
+    "icons": {
+      "info": "assets/ui/icons/ui_icon_info.png"
+    }
+  },
+
+  "weather": {
+    "clear": {
+      "file": "assets/weather/weather_clear.png",
+      "priority": "P0"
+    },
+
+    "cloudy": {
+      "file": "assets/weather/weather_cloudy.png",
+      "priority": "P0"
+    },
+
+    "rain": {
+      "file": "assets/weather/weather_rain.png",
+      "priority": "P0"
+    },
+
+    "coldwave": {
+      "file": "assets/weather/weather_coldwave.png",
+      "priority": "P0"
+    }
+  },
+
+  "effects": {
+    "coldwave_overlay": {
+      "file": "assets/effects/coldwave/fx_coldwave_overlay.png",
+      "tileable": true,
+      "priority": "P1"
+    },
+
+    "rain_particles": {
+      "path": "assets/effects/rain/",
+      "pattern": "fx_rain_%02d.png",
+      "frame_count": 4,
+      "loop": true,
+      "priority": "P2"
+    },
+
+    "campfire_fire": {
+      "path": "assets/effects/campfire/",
+      "pattern": "fx_campfire_%02d.png",
+      "frame_count": 4,
+      "loop": true,
+      "priority": "P1"
+    }
+  },
+
+  "animations": {
+    "player_walk": {
+      "frame_total": 16,
+      "loop": true
+    },
+
+    "player_idle": {
+      "frame_total": 8,
+      "loop": true
+    },
+
+    "dog_idle": {
+      "frame_total": 4,
+      "loop": true
+    },
+
+    "campfire_fire": {
+      "frame_total": 4,
+      "loop": true
+    },
+
+    "crop_wind_sway": {
+      "frame_total": 2,
+      "loop": true
+    },
+
+    "coldwave_shimmer": {
+      "frame_total": 4,
+      "loop": true
+    },
+
+    "tree_shake": {
+      "frame_total": 3,
+      "loop": false
+    }
+  },
+
+  "placeholders": {
+    "temp_tile": "assets/placeholder/temp_tile.png",
+    "missing_icon": "assets/placeholder/missing_icon.png"
+  }
+}
